@@ -13,3 +13,17 @@ AWQ
 GGUF
 
 PagedAttention
+
+Feature
+
+Weight
+
+Loss
+
+Gradient 
+
+Backpropagation
+
+Optimizer
+
+Learning Rate
