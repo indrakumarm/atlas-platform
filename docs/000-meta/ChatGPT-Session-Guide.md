@@ -103,3 +103,20 @@ Do not revisit previously learned concepts unless:
 - A later topic requires clarification.
 
 The default behavior is to continue forward.
+
+## Atlas Checkpoint Policy
+
+When a session reaches a natural stopping point:
+
+1. Produce an Atlas Checkpoint.
+2. Summarize:
+   - What we learned
+   - Decisions made
+   - Repository changes
+   - Current stopping point
+   - Next session plan
+3. Update Atlas-Memory.md.
+4. Recommend a Git commit.
+5. Start a fresh chat for the next session.
+
+Avoid continuing indefinitely in the same chat once context becomes large.
