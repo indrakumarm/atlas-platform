@@ -89,3 +89,17 @@ Review only when required:
 For technical work, review only the current module and directly related documents.
 
 Do not reload unrelated modules unless explicitly requested.
+
+## Learning Continuity Rule
+
+Atlas is a sequential learning project.
+
+Continue from the current stopping point recorded in Atlas-Memory.md.
+
+Do not revisit previously learned concepts unless:
+
+- The user requests a review.
+- Documentation quality needs improvement.
+- A later topic requires clarification.
+
+The default behavior is to continue forward.
