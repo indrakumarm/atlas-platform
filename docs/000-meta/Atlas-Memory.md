@@ -1,185 +1,126 @@
 # Atlas Memory
 
-Last Updated:
-2026-08-01
-
-Current Version:
-v0.1.0
-
-Checkpoint:
-CP-001
-
----
-
-## Vision
-
-Atlas is a long-term project to learn, build, and operate a production-grade AI inference platform.
-
-The repository should evolve into an engineering handbook rather than a collection of notes.
-
-Primary goals:
-
-- Learn AI Infrastructure from first principles.
-- Build a production-ready inference platform.
-- Strengthen AI Infrastructure Engineering skills.
-- Create a portfolio suitable for senior/principal AI Infrastructure roles.
-- Potentially evolve Atlas into a commercial inference platform.
-
----
-
-## Current Module
-
-Module 00
+## Current Phase
 
 AI Foundations
 
-Current Document:
+## Current Module
 
-AF-003 Training Fundamentals
+AI Foundations (AF)
 
-Status:
-
-In Progress
-
----
-
-## Learning Progress
+## Current Status
 
 Completed:
 
-✓ AI Landscape
-
-✓ LLM Lifecycle
-
-Training concepts completed:
-
-✓ Why Training Exists
-
-✓ Mathematical Model
-
-✓ Features
-
-✓ Weights
-
-✓ Forward Pass
-
-✓ Prediction
-
-✓ Loss
-
-✓ Gradient (Conceptual)
-
-✓ Backpropagation (Conceptual)
-
-✓ Optimizer (Conceptual)
-
-✓ Learning Rate (Conceptual)
-
-✓ Complete Training Loop
+- AF-001 AI Landscape
+- AF-002 LLM Lifecycle
+- AF-003 Training Fundamentals
+- AF-004 Neural Networks
+- AF-005 From Neural Networks to Transformers (High-Level)
+- AF-006 Transformer Architecture (Reference Guide)
 
 ---
 
-## Remaining Topics for AF-003
+## Major Learning Achievements
 
-The following topics are intentionally pending.
+During AF-004, the focus shifted from documentation-first to understanding-first.
 
-- Dataset
-- Epoch
-- Batch
-- Mini Batch
-- Gradient Descent
-- SGD
-- Adam Optimizer
-- Why Matrix Multiplication
-- Tensors
-- Why GPUs are required for training
-- Transition into GPU Fundamentals
+Key concepts mastered:
 
-Do not repeat previously completed concepts unless redesigning documentation.
+- A neuron performs a simple mathematical computation.
+- A single neuron cannot solve complex problems.
+- Multiple neurons learn different features.
+- Hidden layers progressively build richer representations.
+- Layer outputs are vectors, not new weights.
+- During inference, weights remain fixed while vectors evolve.
+- Matrix multiplication transforms representations between layers.
+- Activation functions introduce non-linearity, allowing deep networks to model complex relationships.
+- Transformers are specialized neural networks that use Attention to build contextual representations.
+
+The learning approach emphasized intuition, analogies, and first-principles understanding rather than mathematical derivations.
 
 ---
 
-## Next Module
+## Curriculum Decision
+
+Atlas will prioritize the needs of an AI Infrastructure Engineer rather than an AI Research Engineer.
+
+The curriculum follows the 80/20 principle.
+
+Topics required for infrastructure engineering receive detailed treatment.
+
+Research-oriented mathematical derivations are intentionally excluded from the primary learning path and may appear as optional reference material.
+
+---
+
+## Documentation Structure
+
+AI Foundations now consists of:
+
+AF-001 AI Landscape
+
+AF-002 LLM Lifecycle
+
+AF-003 Training Fundamentals
 
 AF-004 Neural Networks
 
-Then:
+AF-005 From Neural Networks to Transformers
 
-AF-005 Transformers
-
-AF-006 Attention
-
-AF-007 Tokenization
-
-AF-008 Embeddings
-
-Only after AI Foundations is complete should GPU Fundamentals begin.
-
----
-
-## Repository Principles
-
-Every session should produce:
-
-- Learning
-- Documentation
-- One Git Commit
-
-Every architectural decision:
-
-→ ADR
-
-Every new term:
-
-→ Glossary
-
-Every unanswered question:
-
-→ Questions.md
-
----
-
-## Teaching Philosophy
-
-Atlas teaches from first principles.
-
-Every concept should answer:
-
-1. What problem does it solve?
-2. Why was it invented?
-3. How does it work?
-4. Why should an AI Infrastructure Engineer care?
-
-Avoid introducing jargon before the underlying problem is understood.
+AF-006 Transformer Architecture (Reference Guide)
 
 ---
 
 ## Current Stopping Point
 
-The conceptual training workflow is complete.
+AI Foundations is complete.
 
-The next learning session should begin with:
+Next module:
 
-Dataset → Batch → Mini Batch → Epoch
+GF-001 GPU Fundamentals
 
-These concepts naturally lead into:
+The next learning phase begins by answering:
 
-Gradient Descent
+Why are GPUs dramatically faster than CPUs for AI workloads?
+
+This question will naturally introduce:
+
+- CPU vs GPU architecture
+- Parallelism
+- CUDA
+- Tensor Cores
+- VRAM
+- Memory Bandwidth
+- Matrix Multiplication on GPUs
+
+---
+
+## Learning Style Decision
+
+Atlas will continue using an interactive, first-principles teaching approach.
+
+Workflow:
+
+Interactive Learning
 
 ↓
 
-Matrix Multiplication
+Discussion
 
 ↓
 
-Tensors
+Questions
 
 ↓
 
-Why GPUs
+Analogies
 
 ↓
 
-CUDA
+Concept Validation
 
-No need to revisit previous training concepts unless improving documentation.
+↓
+
+Documentation
+
+Documentation is considered the output of understanding rather than the primary learning mechanism.
