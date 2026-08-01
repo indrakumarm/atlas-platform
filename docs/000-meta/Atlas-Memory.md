@@ -6,6 +6,9 @@ Last Updated:
 Current Version:
 v0.1.0
 
+Checkpoint:
+CP-001
+
 ---
 
 ## Vision
