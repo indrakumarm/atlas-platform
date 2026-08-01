@@ -354,6 +354,278 @@ Although Atlas does not aim to become a training framework, every AI Infrastruct
 
 ---
 
+---
+
+# Dataset
+
+A model cannot learn without examples.
+
+A **dataset** is the collection of examples from which a machine learning model learns patterns.
+
+Every row in a dataset represents one training example.
+
+For example, a house price prediction dataset may look like:
+
+| Size (sq ft) | Bedrooms | Price |
+|--------------|----------|-------|
+|1200|2|₹45 Lakh|
+|1500|3|₹60 Lakh|
+|2000|4|₹82 Lakh|
+
+Here:
+
+- Size and Bedrooms are **features**
+- Price is the **target (label)**
+
+During training, the model repeatedly studies these examples to discover the relationship between the features and the correct output.
+
+Large Language Models (LLMs) are trained on enormous text datasets consisting of books, web pages, research papers, source code, conversations, and many other forms of text.
+
+The larger and more diverse the dataset, the better the model can generalize to unseen inputs.
+
+---
+
+# Batch
+
+Modern datasets are often far too large to process all at once.
+
+Instead of loading the entire dataset into memory, the data is divided into smaller groups called **batches**.
+
+Example:
+
+```
+Dataset
+
+10,000 Images
+
+↓
+
+Batch Size = 100
+
+↓
+
+100 Batches
+```
+
+Each batch is processed independently.
+
+Processing data in batches provides several advantages:
+
+- Reduces memory usage
+- Improves GPU utilization
+- Allows frequent parameter updates
+- Enables parallel computation
+
+Without batching, training modern neural networks would be impractical.
+
+---
+
+# Mini-Batch
+
+In modern deep learning, the term **batch** almost always refers to a **mini-batch**.
+
+A mini-batch is a small subset of the dataset processed before updating the model's weights.
+
+Example:
+
+```
+Mini Batch
+
+128 Images
+
+↓
+
+Forward Pass
+
+↓
+
+Loss
+
+↓
+
+Backpropagation
+
+↓
+
+Optimizer Updates Weights
+```
+
+Each mini-batch produces one weight update.
+
+Choosing an appropriate mini-batch size is an important training decision because it directly affects:
+
+- GPU memory usage
+- Training throughput
+- GPU utilization
+- Communication overhead in distributed training
+
+---
+
+# Epoch
+
+A model usually cannot learn everything from a dataset after seeing it only once.
+
+An **epoch** is one complete pass through the entire training dataset.
+
+Suppose:
+
+- Dataset Size = 10,000 Images
+- Batch Size = 100
+
+Training proceeds through 100 batches.
+
+Once all 100 batches have been processed, one epoch has completed.
+
+Training typically requires many epochs before the model converges.
+
+```
+Dataset
+
+↓
+
+Batch 1
+
+↓
+
+Batch 2
+
+↓
+
+...
+
+↓
+
+Batch 100
+
+↓
+
+One Epoch Complete
+```
+
+Multiple epochs allow the model to gradually improve its predictions.
+
+---
+
+# Gradient Descent
+
+After each forward pass, the model calculates a loss value indicating how wrong its prediction was.
+
+Knowing the error alone is not enough.
+
+The model must determine **which direction the weights should move to reduce the loss**.
+
+Gradient Descent provides this direction.
+
+A useful analogy is walking down a mountain in dense fog.
+
+At every step, you determine which direction leads downhill and take a small step.
+
+Repeated many times, you eventually reach the valley.
+
+Training follows the same idea.
+
+```
+Current Weights
+
+↓
+
+Gradient
+
+↓
+
+Move Toward Lower Loss
+
+↓
+
+Updated Weights
+```
+
+Gradient Descent forms the foundation of nearly every optimization algorithm used in deep learning.
+
+---
+
+# Stochastic Gradient Descent (SGD)
+
+One approach to Gradient Descent would be to compute gradients using the entire dataset before updating the model.
+
+For modern datasets, this is computationally expensive.
+
+Instead, **Stochastic Gradient Descent (SGD)** updates the weights much more frequently by using one example or, more commonly, one mini-batch at a time.
+
+```
+Mini Batch
+
+↓
+
+Forward Pass
+
+↓
+
+Loss
+
+↓
+
+Gradient
+
+↓
+
+Update Weights
+```
+
+Because each update is based on only a small portion of the dataset, the optimization path is noisier but significantly faster.
+
+Nearly all modern training uses mini-batch SGD or optimizers derived from it.
+
+---
+
+# Adam Optimizer
+
+While SGD is simple and effective, it applies the same learning strategy to every weight.
+
+Modern neural networks contain millions—or even billions—of parameters, and different parameters often require different update behaviors.
+
+The **Adam Optimizer (Adaptive Moment Estimation)** improves upon SGD by automatically adapting the update for each parameter.
+
+Conceptually, Adam:
+
+- Remembers recent gradients (momentum)
+- Estimates the direction of travel
+- Adjusts the effective learning rate for each weight
+- Produces more stable updates
+
+```
+Mini Batch
+
+↓
+
+Forward Pass
+
+↓
+
+Loss
+
+↓
+
+Backpropagation
+
+↓
+
+Gradients
+
+↓
+
+Adam Optimizer
+
+↓
+
+Updated Weights
+```
+
+Because of its stability and fast convergence, Adam and its variants (such as AdamW) are widely used for training modern transformer models.
+
+---
+
+
 # Related Documents
 
 Previous
